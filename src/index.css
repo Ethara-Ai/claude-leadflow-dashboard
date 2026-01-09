@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+/* Glass card effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    border-radius: 1rem;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+:is(.dark .glass-card) {
+    background: rgba(17, 24, 39, 0.8);
+    border-color: rgba(55, 65, 81, 0.5);
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.3),
+        0 4px 6px -2px rgba(0, 0, 0, 0.2),
+        0 0 20px -5px rgba(59, 130, 246, 0.05);
+}
+
+.glass-card-hover {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    border-radius: 1rem;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.glass-card-hover:hover {
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-4px) scale(1.02);
+}
+
+:is(.dark .glass-card-hover) {
+    background: rgba(17, 24, 39, 0.8);
+    border-color: rgba(55, 65, 81, 0.5);
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.3),
+        0 4px 6px -2px rgba(0, 0, 0, 0.2),
+        0 0 20px -5px rgba(59, 130, 246, 0.05);
+}
+
+:is(.dark .glass-card-hover:hover) {
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 30px -5px rgba(59, 130, 246, 0.1);
+}
+
+/* Button styles */
+.btn-primary {
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    font-weight: 500;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary {
+    padding: 0.5rem 1rem;
+    background-color: #f3f4f6;
+    color: #374151;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+:is(.dark .btn-secondary) {
+    background-color: #1f2937;
+    color: #d1d5db;
+}
+
+:is(.dark .btn-secondary:hover) {
+    background-color: #374151;
+}
+
+/* Skeleton loading */
+.skeleton {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background-color: #e5e7eb;
+    border-radius: 0.25rem;
+}
+
+:is(.dark .skeleton) {
+    background-color: #1f2937;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Scrollbar hide */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Custom scrollbar for non-mobile */
+@media (min-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f3f4f6;
+    }
+
+    :is(.dark ::-webkit-scrollbar-track) {
+        background: #111827;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #d1d5db;
+        border-radius: 9999px;
+    }
+
+    :is(.dark ::-webkit-scrollbar-thumb) {
+        background: #374151;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
+    }
+
+    :is(.dark ::-webkit-scrollbar-thumb:hover) {
+        background: #4b5563;
+    }
+}
