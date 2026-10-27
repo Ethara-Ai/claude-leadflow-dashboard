@@ -210,10 +210,6 @@ The following data is stored in localStorage:
 - Email notifications
 - Mobile app version
 
-## 📄 License
-
-MIT License - feel free to use this project for personal or commercial purposes.
-
 ## 👨‍💻 Author
 
 Built with ❤️ using modern web technologies
