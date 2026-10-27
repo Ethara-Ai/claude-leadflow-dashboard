@@ -229,3 +229,9 @@ For support, email support@leadflow.com or visit our help center.
 ---
 
 **LeadFlow** - Empowering sales teams to track, manage, and close deals faster.
+
+---
+
+## Copyright
+
+Copyright (c) 2026 Green Rider Technology LLP (Ethara AI). All rights reserved.
